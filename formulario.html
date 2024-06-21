@@ -12,7 +12,44 @@
         <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
       
       </head>
-<body>
-    
+      <body>
+        <h1>Solicitud de Capítulos de Los Simpson</h1>
+        <div class="decorative-images">
+           <img class="simpsons-image" src="img/images.png" alt="Imagen 2 de Los Simpson">
+        </div>
+        <form id="solicitudForm" onsubmit="return validarFormulario()">
+          <div>
+            <label for="nombre">Nombre:</label>
+            <input type="text" id="nombre" name="nombre" required>
+          </div>
+          <div>
+            <label for="email">Email:</label>
+            <input type="email" id="email" name="email" required>
+          </div>
+          <div>
+            <label for="temporada">Temporada:</label>
+            <select id="temporada" name="temporada" required onchange="cargarCapitulos()">
+              <option value="">Seleccione una temporada</option>
+              <!-- Las opciones de temporada se cargarán dinámicamente desde la API -->
+            </select>
+          </div>
+          <div>
+            <label for="capitulo">Capítulo:</label>
+            <select id="capitulo" name="capitulo" required>
+              <option value="">Seleccione un capítulo</option>
+              <!-- Las opciones de capítulo se cargarán dinámicamente según la temporada seleccionada -->
+            </select>
+            <div>
+              <input type="submit" value="Enviar solicitud">
+            </div>
+          </div>
+          
+        </form>
+        <div id="mensajeExito" class="mensaje-exito">
+          <!-- El mensaje se llenará dinámicamente aquí -->
+        </div>
+      
+      
+        <script src="form.js"></script>
 </body>
 </html>
