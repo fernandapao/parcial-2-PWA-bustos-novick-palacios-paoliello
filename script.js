@@ -283,7 +283,7 @@ const dbVersion = db.version(1).stores({
 const mostrarLista = (usuarios) => {
     const lista = document.getElementById('lista');
     logs.forEach(log => {
-        lista.innerHTML += <li>${new Date(log.date).toISOString()}</li>
+        lista.innerHTML += `<li>${new Date(log.date).toISOString()}</li>`
     });
 }
 
