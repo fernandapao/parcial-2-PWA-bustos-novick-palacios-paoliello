@@ -59,3 +59,21 @@ body {
   input[type="submit"]:hover {
     background-color: #1565c0;
   }
+
+  .simpsons-image {
+    display: block;
+    margin: 0 auto 20px;
+    width: 100px;
+    height: auto;
+  }
+  .error {
+    color: red;
+  }
+  .mensaje-exito {
+      display: none; /* Ocultar inicialmente */
+     font-size: large;
+      color: rgb(10, 9, 9);
+      padding: 10px;
+      margin-top: 10px;
+      text-align: center;
+    }
