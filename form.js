@@ -79,13 +79,10 @@ document.getElementById('solicitudForm').addEventListener('submit', async functi
 
 // Función para mostrar el mensaje de éxito con temporada y capítulo seleccionados
 function mostrarMensajeExito(temporada, capitulo) {
-  const mensaje = Has elegido el capítulo ${capitulo} de la temporada ${temporada}. En breve recibiras el capitulo vía mail;
+  const mensaje = `Has elegido el capítulo ${capitulo} de la temporada ${temporada}. En breve recibiras el capitulo vía mail`;
   const mensajeExitoDiv = document.getElementById('mensajeExito');
   mensajeExitoDiv.textContent = mensaje;
 }
-// Manejo de estado de conexión
-    //window.addEventListener('online', () => M.toast({html: 'Conexión restablecida', classes: 'toast'}));
-    //window.addEventListener('offline', () => M.toast({html: 'Conexión perdida', classes: 'toast'}));
  
     // Función para validar el formulario antes de enviar
     function validarFormulario() {
