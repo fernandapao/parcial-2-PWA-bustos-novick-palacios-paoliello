@@ -94,7 +94,7 @@ function mostrarEpisodios(episodiosAMostrar) {
         // Crear el elemento <h2> con la clase "card-title"
         const cardBodyTitle = document.createElement("h2");
         cardBodyTitle.classList.add("card-title");
-        cardBodyTitle.textContent = ${episodio.id} - ${episodio.name};
+        cardBodyTitle.textContent = `${episodio.id} - ${episodio.name}`;
 
         const boton = document.createElement("button");
         boton.type = "button";
@@ -103,7 +103,7 @@ function mostrarEpisodios(episodiosAMostrar) {
         boton.classList.add("custom-button");
         boton.setAttribute("data-bs-toggle", "modal");
         boton.setAttribute("data-bs-target", "#exampleModal");
-        boton.setAttribute("data-capitulo", ${episodio.id});
+        boton.setAttribute("data-capitulo", `${episodio.id}`);
         boton.textContent = "Ver más";
         boton.style.position = "absolute";
         boton.style.bottom = "20px";
