@@ -1,0 +1,38 @@
+body {
+    margin: auto;
+    background-color: #ffde00;
+}
+
+h1 {
+    display: none;
+}
+
+main {
+    max-width: 980px;
+}
+
+.logo-principal{
+    display: block;
+    margin: auto;
+
+    max-width: 550px;
+}
+
+.modificaciones {
+    border-radius: 5px;
+    margin-bottom: 1rem;
+    background-color: black;
+}
+
+.loading{
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background-color: black;
+    color: white;
+    z-index: 9;
+    display: flex;
+    justify-content: center;
+    align-content: center;
+    align-items: center;
+}
