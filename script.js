@@ -299,3 +299,78 @@ db.usuarios
     .then((usuarios) => {
         mostrarLista(usuarios)
     })
+
+
+
+     //instalacion
+
+     let eventoDeInstalacion = null;
+
+     // Escucha el evento 'beforeinstallprompt'
+     window.addEventListener("beforeinstallprompt", (e) => {
+         console.log("beforeinstallprompt", e);
+         eventoDeInstalacion = e;
+     });
+     
+     // Manejador para el botón de instalación
+     const installButton = document.getElementById("installButton");
+     installButton.addEventListener("click", () => {
+         console.log("eventoDeInstalacion", eventoDeInstalacion);
+         
+         // Verifica si el evento de instalación está disponible y puede ser activado
+         if (eventoDeInstalacion && eventoDeInstalacion.prompt) {
+             eventoDeInstalacion.prompt()
+             .then((resultado) => {
+                 const opcionesElegida = resultado.outcome;
+                 console.log("opcionesElegida", opcionesElegida);
+                 
+                 // Maneja las opciones elegidas por el usuario
+                 if (opcionesElegida === "dismissed") {
+                     console.log("Instalación cancelada");
+                 } else if (opcionesElegida === "accepted") {
+                     console.log("Instalación completa");
+                     ocultarBotonInstalacion();
+                 }
+             })
+             .catch((error) => console.log("Error al intentar instalar"));
+         }
+     });
+     
+     // Oculta el botón de instalación
+     const ocultarBotonInstalacion = () => {
+         installButton.style.display = "none";
+     };
+     
+     
+     
+     
+     
+     document.addEventListener("DOMContentLoaded", () => {
+         const toastOnline = document.querySelector('.toast-online');
+         const toastOffline = document.querySelector('.toast-offline');
+     
+         const bsToastOnline = new bootstrap.Toast(toastOnline);
+         const bsToastOffline = new bootstrap.Toast(toastOffline);
+     
+         // Mostrar el toast cuando esté online
+         window.addEventListener('online', () => {
+             bsToastOffline.hide();
+             bsToastOnline.show();
+         });
+     
+         // Mostrar el toast cuando esté offline
+         window.addEventListener('offline', () => {
+             bsToastOnline.hide();
+             bsToastOffline.show();
+         });
+     
+         // Verificar el estado inicial
+         if (navigator.onLine) {
+             bsToastOffline.hide();
+             bsToastOnline.show();
+         } else {
+             bsToastOnline.hide();
+             bsToastOffline.show();
+         }
+     });
+     
