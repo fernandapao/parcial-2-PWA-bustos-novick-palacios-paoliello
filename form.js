@@ -11,7 +11,7 @@ let episodios = [];
         temporadas.forEach(temporada => {
           const option = document.createElement('option');
           option.value = temporada;
-          option.textContent = Temporada `${temporada}`;
+          option.textContent = `Temporada ${temporada}`;
           temporadaSelect.appendChild(option);
         });
         M.FormSelect.init(temporadaSelect);
