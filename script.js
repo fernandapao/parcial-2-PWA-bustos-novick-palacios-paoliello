@@ -259,3 +259,43 @@ function checkImageExists(url, callback) {
     };
     img.src = url;
 }
+
+//--------------------------------------------------------Service Worker
+if (navigator.serviceWorker){
+    navigator.serviceWorker.register('./sw.js')
+    .then(() => {
+        console.log("registrado");
+    })
+    .catch(() => {
+        console.error("falló");
+    });
+}
+
+
+
+//--------------------------------------------------------Index db
+const db = new Dexie("Visitas");
+
+const dbVersion = db.version(1).stores({
+    usuarios: "++id, date"
+});
+
+const mostrarLista = (usuarios) => {
+    const lista = document.getElementById('lista');
+    logs.forEach(log => {
+        lista.innerHTML += <li>${new Date(log.date).toISOString()}</li>
+    });
+}
+
+db.usuarios
+    .add({
+        date: new Date().getTime()
+    })
+    .then(() => db.usuarios
+            .where('date')
+            .below(new Date(2024, 4, 21).getTime())
+            .toArray()
+    )
+    .then((usuarios) => {
+        mostrarLista(usuarios)
+    })
