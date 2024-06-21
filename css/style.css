@@ -1,0 +1,61 @@
+body {
+    font-family: 'Comic Sans MS', sans-serif;
+    background-color: #fdd835;
+    color: #000;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+    margin: 0;
+    padding: 0;
+  }
+  h2 {
+    color: #0b0b0b; /* Color amarillo similar a la piel de los personajes */
+    text-align: center;
+  }
+  .top-left-image {
+      position: absolute;
+      top: -20px;
+      left: -20px;
+      width: 100px;
+      height: auto;
+      border-radius: 10px;
+      box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+    }
+    .toast {
+      background-color: red;
+      color: white;
+    }
+    form {
+      width: 90%;
+      max-width: 600px;
+             padding: 20px;
+      background-color: rgba(255, 255, 255, 0.9);
+      border-radius: 10px;
+      box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+      margin: 20px 0;
+      position: relative;
+    }
+  label {
+    display: block;
+    margin-bottom: 5px;
+  }
+  input, select {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+  }
+  input[type="submit"] {
+      background-color: #1976d2; /* Azul similar al de la ropa de Bart */
+      color: white;
+      border: none;
+      cursor: pointer;
+      transition: background-color 0.3s;
+      margin-top: 40px; /* Espacio adicional arriba del botón */
+    }
+  input[type="submit"]:hover {
+    background-color: #1565c0;
+  }
