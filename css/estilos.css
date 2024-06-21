@@ -36,3 +36,54 @@ main {
     align-content: center;
     align-items: center;
 }
+
+.loading.deactivate{
+    display: none;
+}
+
+.unpoquitodeestilo{
+    border-radius: 5px;
+    border: none;
+    background-color: black;
+    color: whitesmoke;
+    padding: 2px 4px;
+}
+
+
+.custom-button {
+    background-color: black; 
+    color: white; 
+    border: none; 
+    padding: 10px 20px; 
+    cursor: pointer; 
+  }
+  
+  .custom-button:hover {
+    background-color: yellow;
+    color: black;
+  }
+  
+
+.btn {
+    color: whitesmoke;
+}
+
+.toast-header {
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+    padding: 20px;
+    font-size: 20px;
+    background-color: rgb(0, 0, 0);
+    color: whitesmoke;
+  }
+
+  .btn-close {
+    background-color: transparent;
+    color: whitesmoke;
+  }
+
+  button.ml-2.mb-1.btn-close {
+    background-color: black;
+    
+}
