@@ -83,3 +83,37 @@ function mostrarMensajeExito(temporada, capitulo) {
   const mensajeExitoDiv = document.getElementById('mensajeExito');
   mensajeExitoDiv.textContent = mensaje;
 }
+// Manejo de estado de conexión
+    //window.addEventListener('online', () => M.toast({html: 'Conexión restablecida', classes: 'toast'}));
+    //window.addEventListener('offline', () => M.toast({html: 'Conexión perdida', classes: 'toast'}));
+ 
+    // Función para validar el formulario antes de enviar
+    function validarFormulario() {
+      var nombre = document.getElementById('nombre').value;
+      var email = document.getElementById('email').value;
+      var temporada = document.getElementById('temporada').value;
+      var capitulo = document.getElementById('capitulo').value;
+      var formularioValido = true;
+
+      if (nombre.trim() === '') {
+        alert('Por favor, ingrese su nombre.');
+        formularioValido = false;
+      }
+      if (email.trim() === '') {
+        alert('Por favor, ingrese su email.');
+        formularioValido = false;
+      }
+      if (temporada === '') {
+        alert('Por favor, seleccione una temporada.');
+        formularioValido = false;
+      }
+      if (capitulo === '') {
+        alert('Por favor, seleccione un capítulo.');
+        formularioValido = false;
+      }
+
+      return formularioValido;
+    }
+
+    // Cargar las temporadas al cargar la página
+    cargarTemporadas();
