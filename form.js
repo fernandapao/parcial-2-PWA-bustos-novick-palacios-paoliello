@@ -76,3 +76,10 @@ document.getElementById('solicitudForm').addEventListener('submit', async functi
     M.toast({html: 'no se envia', classes: 'toast'});
   }
 });
+
+// Función para mostrar el mensaje de éxito con temporada y capítulo seleccionados
+function mostrarMensajeExito(temporada, capitulo) {
+  const mensaje = Has elegido el capítulo ${capitulo} de la temporada ${temporada}. En breve recibiras el capitulo vía mail;
+  const mensajeExitoDiv = document.getElementById('mensajeExito');
+  mensajeExitoDiv.textContent = mensaje;
+}
