@@ -37,3 +37,42 @@ let episodios = [];
         M.FormSelect.init(capituloSelect);
       }
     }
+
+
+    // Modificar la función de enviar solicitud para incluir el mensaje
+document.getElementById('solicitudForm').addEventListener('submit', async function(event) {
+  event.preventDefault();
+  const nombre = document.getElementById('nombre').value;
+  const email = document.getElementById('email').value;
+  const temporada = document.getElementById('temporada').value;
+  const capitulo = document.getElementById('capitulo').value;
+
+  const data = { nombre, email, temporada, capitulo };
+
+  try {
+    const response = await fetch('https://api.sampleapis.com/simpsons/episodes', {
+      method: 'POST',
+      headers: {
+        'Content-Type': 'application/json'
+      },
+      body: JSON.stringify(data)
+    });
+    if (response.ok) {
+      // Mostrar mensaje de éxito con los datos seleccionados
+      mostrarMensajeExito(temporada, capitulo);
+
+      // Limpiar el formulario después del envío exitoso
+      document.getElementById('solicitudForm').reset();
+
+      // Ocultar el formulario después del envío exitoso
+      document.getElementById('solicitudForm').style.display = 'none';
+
+      // Mostrar el mensaje de éxito
+      document.getElementById('mensajeExito').style.display = 'block';
+    } else {
+      throw new Error('Error en el envío');
+    }
+  } catch (error) {
+    M.toast({html: 'no se envia', classes: 'toast'});
+  }
+});
